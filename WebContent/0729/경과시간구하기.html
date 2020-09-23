@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+		today = new Date();
+		birday = new Date(1995,01,09);
+		
+		times = today.getTime() - birday.getTime();
+		
+		res = "생일 : " + birday + "<br>";
+		
+		res += "살아온 millisec : " + times + "<br>";
+		res += "살아온 초 :  " +  Math.floor(times/1000) + "<br>";
+		res += "살아온 분 :  " +  Math.floor(times/1000/60) + "<br>";
+		res += "살아온 시간  : " +  Math.floor(times/1000/60/60) + "<br>";
+		res += "살아온 일수 : " +  Math.floor(times/1000/60/60/24) + "<br>";
+		res += "살아온 년도 : " +  Math.floor(times/1000/60/60/24/365) + "<br>";
+		
+		
+		document.querySelector("#result1").innerHTML = res;
+	}
+	function proc2(){
+		//오늘 날짜 생성
+		today = new Date();
+		
+		
+		// times = 오늘의 millisec + 100일의 millisec
+		//times = (((today.getTime()/1000/60/60/24)+100)*24*60*60*1000);
+		times = today.getTime() + 24*60*60*1000*100;			
+		// 새로운 Date객체 생성 - nday =  new Date(times)
+		nday = new Date(times);
+		
+		// nday 를 출력
+		
+		document.querySelector("#result2").innerHTML = nday;
+	}
+	function proc3(){
+		
+		today = new Date();
+		today2 = new Date(2020,11,25);
+		
+		//times = 5%3;
+		times = 365-((today.getTime()/1000/60/60/24)%365);
+		//times = ((today2.getTime()/1000/60/60/24/365));
+		//nday =   - (today.getTime()/1000/60/60/24);
+		times = today2.getTime() - today.getTime();
+		
+		res = times/1000/60/60/24
+		document.querySelector("#result3").innerHTML = res;
+		
+		
+		
+	}		
+	
+</script>
+</head>
+<body>
+<div class = "box">
+	<h3>1. 경과시간</h3>
+	- 태어난 날/ 이성친구 만난날로 부터 현재까지 날 수 구하기 <br>
+	birthday = new Date("태어난 날")
+	today = new Date() : 현재 오늘 날짜 
+	
+	
+	
+	<br>
+	<input type = "button" value = "확인" onclick = "proc1()">
+	<br><br>
+	<div id = "result1"></div>
+</div>
+
+<div class = "box">
+	<h3>2. 경과시간</h3>
+	- 오늘부터 1일일떄 100일 후 구하기 <br>
+	- today = new Date()
+	- 100일의 millesec 값 구하기
+	- today.getTime() +  100일의 millesec 값
+	<br>
+	<input type = "button" value = "확인" onclick = "proc2()">
+	<br><br>
+	<div id = "result2"></div>
+</div>
+
+<div class = "box">
+	<h3>3. 경과시간</h3>
+	- 크리스마스 까지 남은 날 수 구하기<br>
+	
+	<br>
+	<input type = "button" value = "확인" onclick = "proc3()">
+	<br><br>
+	<div id = "result3"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<style>
+	div{
+		width : 200px;
+		height : 100px;
+		background : yellow;
+	}
+</style>
+
+<script>
+	function calc(){
+		 x = parseInt(prompt("첫번째 정수를 입력하세요"))
+		 y = parseInt(prompt("두번쨰 정수를 입력하세요"))
+		 z = prompt("사칙연산을 입력해주세요")
+		
+		/*
+		if(z=="+"){
+		sum = x+y
+		}else if(z=="-"){
+		sum = x-y	
+		}else if(z=="*"){
+		sum = x*y	
+		}else if(z=="/"){
+		sum = x/y
+		}else{
+			msg = "잘못입력 하셨습니다.";
+		}*/
+		switch(z){
+		case "+":
+		sum = x+y
+		break;
+		case "-":
+		sum = x-y
+		break;
+		case "*":
+		sum = x*y
+		break;
+		case "/":
+		sum = x/y
+		break;
+		}
+		
+		res  = x + z + y + " = " + sum ;
+		document.getElementById('out').innerHTML = res;
+	}
+</script>
+</head>
+<body>
+<pre>
+
+ 두개의 수를 prompt로 입력받는다
+ 한개의 연산자를 prompt로 입력받는다
+ 
+ 연산자를 비교해서 (if/ switch) 연산을 수행한다.
+ 결과값을 div에 출력한다.
+</pre>
+
+<input type = "button" onclick="calc()" value = "확인">
+
+
+<br><br>
+
+
+<div id = "out"> </div>
+
+</body>
+</html>
